@@ -1,104 +1,78 @@
 .about__container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+  
+.about__journey {
     display: grid;
-    grid-template-columns: 35% 50%;
-    gap: 15%;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
-
-.about__me {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg,transparent,var(--color-primary),transparent);
-    display: grid;
-    place-items: center;
-}
-
-.about__me-image {
-    border-radius: 2rem;
-    overflow: hidden;
-    transform: rotate(10deg);
-    transition: var(--transition);
-}
-
-.about__me-image:hover {
-    transform: rotate(0);
-
-}
-
-.about__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  
+.journey__section {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
-
-.about__card
-{
-    background: var(--color-bg-variant);
-    border: 1px solid transparent;
-    border-radius: 1rem;
-    padding: 2rem;
+  
+.journey__section h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
     text-align: center;
+}
+  
+.journey__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: var(--color-bg-variant);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--color-primary-variant);
     transition: var(--transition);
 }
-
-.about__card:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+  
+.journey__card:hover {
+    background: var(--color-primary-variant);
 }
-
-.about__icon {
+  
+.journey__timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
 }
-
-.about__card h5 {
-    font-size: 0.95rem;
+  
+.journey__details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
-.about__card small {
-    font-size: 0.7rem;
+  
+.journey__details p {
+    font-size: 0.9rem;
     color: var(--color-light);
 }
-
-.about__content p {
-    margin: 2rem 0 2.6rem;
-    color: var(--color-light);
-}
-
-@media screen and (max-width: 1024px)
-{
-.about__container {
-    grid-template-columns: 1fr;
-    gap: 0;
-}
-
-.about__me {
-    width: 50%;
-    margin: 2rem auto 4rem;
-}
-
-.about__content p {
-    margin: 1rem 0 1.5rem;
-}
-}
-@media screen and (max-width: 600px)
-{
-    .about__me {
-        width: 65%;
-        margin:0 auto 3rem;
+  
+@media screen and (max-width: 1024px) {
+    .about__container {
+      flex-direction: column;
     }
-
-    .about__cards {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+  
+    .about__journey {
+      grid-template-columns: 1fr;
     }
-
-    .about__content {
-        text-align: center;
+}
+  
+@media screen and (max-width: 600px) {
+    .journey__details h4 {
+      font-size: 1rem;
     }
-
-    .about__content p {
-        margin: 1.4rem 0;
+  
+    .journey__details p {
+      font-size: 0.8rem;
     }
 }

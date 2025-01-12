@@ -1,122 +1,95 @@
-import React from 'react'
-import './Experience.css'
-import {BsPatchCheckFill} from 'react-icons/bs'
+import React from 'react';
+import './Experience.css';
+import { BsPatchCheckFill } from 'react-icons/bs';
+import { Tilt } from 'react-tilt';
+
+import { motion } from 'framer-motion';
+
+const frontendSkills = [
+  { id: 1, skill: 'HTML', level: 'Experienced' },
+  { id: 2, skill: 'CSS', level: 'Intermediate' },
+  { id: 3, skill: 'JavaScript', level: 'Intermediate' },
+  { id: 4, skill: 'React', level: 'Intermediate' },
+  { id: 5, skill: 'Angular', level: 'Intermediate' },
+  { id: 6, skill: 'TypeScript', level: 'Intermediate' },
+];
+
+const backendSkills = [
+  { id: 1, skill: 'Java', level: 'Experienced' },
+  { id: 2, skill: 'SpringBoot', level: 'Experienced' },
+  { id: 3, skill: 'Hibernate', level: 'Experienced' },
+  { id: 4, skill: 'Kafka', level: 'Experienced' },
+  { id: 5, skill: 'Ruby on Rails', level: 'Experienced' },
+  { id: 6, skill: 'PostgreSQL', level: 'Experienced' },
+];
 
 const Experience = () => {
   return (
-    <section id='experience'>
-        <h5>What Skills I have</h5>
-        <h2>My Experience</h2>
-        <div className="container experience__container">
-            <div className="experience__frontend">
-                <h3>Frontend Development</h3>
-                <div className="experience__content">
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>HTML</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
+    <section id="experience">
+      <motion.h5
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        What Skills I Have
+      </motion.h5>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        My Experience
+      </motion.h2>
 
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>CSS</h4>
-                        <small className='text-light'>Intermediate</small>
-                        </div>
-                    </article>
+      <div className="container experience__container">
+        {/* Frontend Skills */}
+        <motion.div
+          className="experience__frontend"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h3>Frontend Development</h3>
+          <div className="experience__content">
+            {frontendSkills.map(({ id, skill, level }) => (
+              <Tilt className="tilt" options={{ max: 25, scale: 1.05, speed: 400 }} key={id}>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>{skill}</h4>
+                    <small className="text-light">{level}</small>
+                  </div>
+                </article>
+              </Tilt>
+            ))}
+          </div>
+        </motion.div>
 
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>Javascript</h4>
-                        <small className='text-light'>Intermediate</small>
-                        </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                       <div>
-                       <h4>React</h4>
-                        <small className='text-light'>Intermediate</small>
-                       </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>Angular</h4>
-                        <small className='text-light'>Intermediate</small>
-                        </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>TypeScript</h4>
-                        <small className='text-light'>Intermediate</small>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-
-            <div className="experience__backend">
-            <h3>Backend</h3>
-                <div className="experience__content">
-                <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                       <div>
-                       <h4>Java</h4>
-                        <small className='text-light'>Experienced</small>
-                       </div>
-                    </article>
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                       <div>
-                       <h4>SpringBoot</h4>
-                        <small className='text-light'>Experienced</small>
-                       </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>Hibernate</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                        <div>
-                        <h4>Kafka</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                       <div>
-                       <h4>Maven</h4>
-                        <small className='text-light'>Experienced</small>
-                       </div>
-                       
-                    </article>
-                    <article className='experience__details'>
-                        <BsPatchCheckFill className = 'experience__details-icon'/>
-                       <div>
-                       <h4>PostgreSql</h4>
-                        <small className='text-light'>Experienced</small>
-                       </div>
-                       </article>
-                </div>
-
-            </div>
-        </div>
+        {/* Backend Skills */}
+        <motion.div
+          className="experience__backend"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h3>Backend Development</h3>
+          <div className="experience__content">
+            {backendSkills.map(({ id, skill, level }) => (
+              <Tilt className="tilt" options={{ max: 25, scale: 1.05, speed: 400 }} key={id}>
+                <article className="experience__details">
+                  <BsPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>{skill}</h4>
+                    <small className="text-light">{level}</small>
+                  </div>
+                </article>
+              </Tilt>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;
