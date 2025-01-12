@@ -1,52 +1,82 @@
-import React from 'react'
-import './About.css'
-import ME from '../../assets/Sharif.jpeg'
-import { FaAward } from 'react-icons/fa'
-import { FiUsers } from 'react-icons/fi'
-import { VscFolderLibrary } from 'react-icons/vsc'
+import React from 'react';
+import './About.css';
 
+const educationData = [
+  {
+    id: 1,
+    year: '2017 - 2020',
+    title: 'Bachelor of Computer Applications',
+    description: 'Graduated with distinction from Jamia Hamdard, building a strong foundation in programming and software development.',
+  },
+  {
+    id: 2,
+    year: '2020 - 2022',
+    title: 'Master of Computer Applications',
+    description: 'Completed postgraduation with distinction, enhancing technical expertise and problem-solving skills.',
+  },
+];
+
+const experienceData = [
+  {
+    id: 1,
+    year: '2022 - Current',
+    title: 'Software Engineer - Nagarro',
+    description: 'Contributing to diverse projects in BFSI, Quick Service Restaurants (QSR), and Artificial Intelligence (AI) domains.',
+  },
+  {
+    id: 2,
+    year: '2021 - 2022',
+    title: 'Intern - Software Development',
+    description: 'Worked with AI Council for for car prediction machine learning model.',
+  },
+];
 
 const About = () => {
-    return (
-        <section id='about'>
-            <h5>Get to Know</h5>
-            <h2>About Me</h2>
+  return (
+    <section id="about">
+      <h5>Discover</h5>
+      <h2>My Journey</h2>
 
-            <div className="container about__container">
-                <div className="about__me">
-                    <div className="about__me-image">
-                        <img src={ME} alt="About Image" />
-                    </div>
+      <div className="container about__container">
+        {/* Right Section: Timeline */}
+        <div className="about__journey">
+          {/* Education Section */}
+          <div className="journey__section">
+            <h3>Education</h3>
+            {educationData.map(({ id, year, title, description }) => (
+              <div key={id} className="journey__card">
+                <div className="journey__timeline">
+                  <span>{year}</span>
+                  <div className="journey__line"></div>
                 </div>
-                <div className="about__content">
-                    <div className="about__cards">
-                        <article className='about__card'>
-                            <FaAward className='about__icon' />
-                            <h5>Experience</h5>
-                            <small>2 year of experience</small>
-                        </article>
-
-                        <article className='about__card'>
-                            <FiUsers className='about__icon' />
-                            <h5>Clients</h5>
-                            <small>5+ Nationwide</small>
-                        </article>
-
-                        <article className='about__card'>
-                            <VscFolderLibrary className='about__icon' />
-                            <h5>Projects</h5>
-                            <small>20+ Completed</small>
-                        </article>
-                    </div>
-                    <p>
-                        I'm a FullStack developer with over two years of experience, having completed 20+ projects. Proficient in Java, SpringBoot, Angular, React, and JavaScript. Let's build something great together!
-                    </p>
-                    <a href='#contact' className='btn btn-primary'>Let's Talk </a>
+                <div className="journey__details">
+                  <h4>{title}</h4>
+                  <p>{description}</p>
                 </div>
-            </div>
+              </div>
+            ))}
+          </div>
 
-        </section>
-    )
-}
+          {/* Experience Section */}
+          <div className="journey__section">
+            <h3>Experience</h3>
+            {experienceData.map(({ id, year, title, description }) => (
+              <div key={id} className="journey__card">
+                <div className="journey__timeline">
+                  <span>{year}</span>
+                  <div className="journey__line"></div>
+                </div>
+                <div className="journey__details">
+                  <h4>{title}</h4>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default About
+export default About;
