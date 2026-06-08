@@ -3,25 +3,25 @@
     justify-content: center;
     gap: 3rem;
 }
-  
+
 .about__journey {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
-  
+
 .journey__section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
-  
+
 .journey__section h3 {
     color: var(--color-primary);
     margin-bottom: 1rem;
     text-align: center;
 }
-  
+
 .journey__card {
     display: flex;
     align-items: flex-start;
@@ -32,11 +32,12 @@
     border: 1px solid var(--color-primary-variant);
     transition: var(--transition);
 }
-  
+
 .journey__card:hover {
     background: var(--color-primary-variant);
+    border-color: var(--color-primary);
 }
-  
+
 .journey__timeline {
     display: flex;
     flex-direction: column;
@@ -45,33 +46,45 @@
     color: var(--color-primary);
     font-weight: bold;
     font-size: 1rem;
+    min-width: fit-content;
 }
-  
+
 .journey__details h4 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
-  
+
 .journey__details p {
     font-size: 0.9rem;
     color: var(--color-light);
 }
-  
+
 @media screen and (max-width: 1024px) {
     .about__container {
       flex-direction: column;
     }
-  
+
     .about__journey {
       grid-template-columns: 1fr;
     }
 }
-  
+
 @media screen and (max-width: 600px) {
+    .journey__card {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .journey__timeline {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
     .journey__details h4 {
       font-size: 1rem;
     }
-  
+
     .journey__details p {
       font-size: 0.8rem;
     }
