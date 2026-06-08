@@ -75,6 +75,9 @@ const Protfolio = () => {
               <a href={github} className="btn" target="_blank" rel="noopener noreferrer">
                 Github
               </a>
+              <a href={demo} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Live Demo
+              </a>
             </div>
           </article>
         ))}
