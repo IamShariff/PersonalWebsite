@@ -47,14 +47,44 @@ footer a {
 }
 
 
-@media screen and (max-width: 600px)
-{
+@media screen and (max-width: 1024px) {
+    footer {
+        padding: 2.5rem 0;
+        margin-top: 5rem;
+    }
+
     .permalinks {
-        flex-direction: column;
         gap: 1.5rem;
     }
 
     .footer__socials {
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    footer {
+        padding: 2rem 0;
+        margin-top: 4rem;
+    }
+
+    .permalinks {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer__socials {
+        gap: 0.8rem;
         margin-bottom: 2.6rem;
+    }
+
+    .footer__socials a {
+        padding: 0.6rem;
+    }
+
+    .footer__copyright {
+        margin-bottom: 3rem;
     }
 }

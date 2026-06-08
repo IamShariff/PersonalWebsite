@@ -34,7 +34,7 @@ html {
 }
 
 body {
-    font-family: initial; /* Reset font to default */
+    font-family: 'Poppins', sans-serif;
     background: var(--color-bg);
     color: var(--color-white);
     line-height: 1.7;
@@ -51,7 +51,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: initial; /* Reset headings font to default */
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
 
@@ -67,7 +67,7 @@ section > h2,
 section > h5 {
     text-align: center;
     color: var(--color-light);
-    font-family: initial; /* Ensure section headers reset */
+    font-family: 'Poppins', sans-serif;
 }
 
 section > h2 {
@@ -77,13 +77,13 @@ section > h2 {
 
 .text-light {
     color: var(--color-light);
-    font-family: initial; /* Reset additional text styles */
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
     color: var(--color-primary);
     transition: var(--transition);
-    font-family: initial; /* Reset links font */
+    font-family: 'Poppins', sans-serif;
 }
 
 a:hover {
@@ -99,7 +99,7 @@ a:hover {
     cursor: pointer;
     border: 1px solid var(--color-primary);
     transition: var(--transition);
-    font-family: initial; /* Reset button font */
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn:hover {
@@ -111,7 +111,7 @@ a:hover {
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-bg);
-    font-family: initial; /* Reset primary button font */
+    font-family: 'Poppins', sans-serif;
 }
 
 img {
@@ -128,6 +128,10 @@ img {
     section {
         margin-top: 6rem;
     }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -137,5 +141,13 @@ img {
 
     section > h2 {
         margin-bottom: 2rem;
+    }
+
+    section {
+        margin-top: 4rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
     }
 }

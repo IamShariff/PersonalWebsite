@@ -44,7 +44,16 @@
         width: var(--container-width-sm);
     }
 
+    .testimonial {
+        padding: 1.2rem;
+    }
+
     .client__review {
         width: var(--container-width-sm);
+    }
+
+    .client__avatar {
+        width: 3rem;
+        border-width: 0.3rem;
     }
 }
